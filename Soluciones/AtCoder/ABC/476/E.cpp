@@ -5,7 +5,7 @@
 using namespace std;
 
 using ll = long long;
-using pll = pair<ll,ll>;
+using pll = pair<ll, ll>;
 using vll = vector<ll>;
 
 const ll INF = 1e18;
