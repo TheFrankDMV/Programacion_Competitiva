@@ -75,7 +75,7 @@ int main() {
             }
 
             bool flag = false;
-            for (int  j = 0; j < m; j++) {
+            for (int j = 0; j < m; j++) {
                 if (inAns[j] && edges[j].c == edges[i].c) {
                     flag = true;
                     break;
