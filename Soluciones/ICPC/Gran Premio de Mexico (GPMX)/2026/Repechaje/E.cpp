@@ -28,7 +28,7 @@ int main() {
     ll n, k;
     cin >> n >> k;
     vll inverse(k);
-    for (int i = 1; i < k; i++) inverse[i]=inv(i);
+    for (int i = 1; i < k; i++) inverse[i] = inv(i);
 
     ll ans = 0;
     for (int i = 1; i <= n; i++) {
