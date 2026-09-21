@@ -67,7 +67,7 @@ int main() {
 
             pq.erase({inDeg[v], v});
             inDeg[v]--;
-            ans[v] =  max(ans[v], ans[u] + 1);
+            ans[v] = max(ans[v], ans[u] + 1);
             pq.insert({inDeg[v], v});
         }
     }
