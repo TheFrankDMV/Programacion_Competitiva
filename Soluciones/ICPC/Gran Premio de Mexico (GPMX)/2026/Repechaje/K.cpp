@@ -38,7 +38,7 @@ struct Node {
             exactLen = rangeLen - l.usedLen - r.usedLen;
             usedLen = rangeLen;
             cntRanges = 1;
-            left = right =true;
+            left = right = true;
         } else {
             exactLen = l.exactLen + r.exactLen;
             usedLen = l.usedLen + r.usedLen;
