@@ -19,7 +19,7 @@ ll calc(ll lx, ll rx) {
 
     if (len % 2 == 0) {
         return (psum[rx] - psum[mid]) - (psum[mid - 1] - psum[lx - 1]) - X[mid];
-    } else  {
+    } else {
         return (psum[rx] - psum[mid]) - (psum[mid - 1] - psum[lx - 1]);
     }
 }
