@@ -13,7 +13,7 @@ int main() {
     ll n;
     cin >> n;
     vll A(n);
-    for(int i = 0; i < n; i++) cin >> A[i];
+    for (int i = 0; i < n; i++) cin >> A[i];
 
     vll cur = {A[0], A[1], A[2]};
     sort(cur.rbegin(), cur.rend());
