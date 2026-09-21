@@ -40,7 +40,7 @@ void solve() {
         ll sz = min(msb(r - l), lsb(l));
         ll pref = __builtin_popcountll(l);
 
-        for (int i = 0; i <= sz; i ++) {
+        for (int i = 0; i <= sz; i++) {
             dp[pref + i] += binom[sz][i];
         }
         for (int i = LOG - 2; i >=0; i--) {
