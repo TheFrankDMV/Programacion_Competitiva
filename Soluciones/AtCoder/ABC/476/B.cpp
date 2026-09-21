@@ -18,5 +18,5 @@ int main() {
         if (t[i] != '*' && s[i] != t[i]) ans = false;
     }
 
-    cout << (ans ? "Yes": "No") << "\n";
+    cout << (ans ? "Yes" : "No") << "\n";
 }
