@@ -12,9 +12,9 @@ const ll ROOT = 62;
 
 ll binpow(ll a, ll b) {
     ll ret = 1;
-    while (b) {
+    while (b > 0) {
         if (b & 1) ret = (ret * a) % MOD;
-        a = (a * a) %MOD;
+        a = (a * a) % MOD;
         b /= 2;
     }
     return ret;
@@ -32,38 +32,40 @@ void ntt(vll &A) {
         for (int i = k; i < 2 * k; i++) rt[i] = (rt[i / 2] * z[i & 1]) % MOD;
     }
     vll rev(n);
-    for (int i = 0; i < n; i++) rev[i] = (rev[i / 2] | (i & 1) << L) / 2;
-    for (int i = 0; i < n; i++) if (i < rev[i]) swap(A[i], A[rev[i]]);
+    for (int i = 0; i < n; i++) {
+        rev[i] = (rev[i / 2] | (i & 1) << L) / 2;
+        if (i < rev[i]) swap(A[i], A[rev[i]]);
+    }
     for (int k = 1; k < n; k *= 2) {
         for (int i = 0; i < n; i += 2 * k) {
             for (int j = 0; j < k; j++) {
                 ll z = (rt[j + k] * A[i + j + k]) % MOD;
-                ll ai = A[i + j];
-                A[i + j + k] = ai - z + (z > ai ? MOD : 0);
-                A[i + j] = ai + z - (ai + z >= MOD ? MOD : 0);
+                ll &ai = A[i + j];
+                A[i + j + k] = ai - z + (ai < z ? MOD : 0);
+                ai = ai + z - (ai + z >= MOD ? MOD : 0);
             }
         }
     }
 }
-vll multiply(vll X, vll Y) {
-    if (X.empty() || Y.empty()) return {};
-    ll s = X.size() + Y.size() - 1, B = 32 - __builtin_clz(s);
-    ll n = (1ll << B), inverse = inv(n);
-    vll L(X), R(Y), out(n);
+vll convolution(vll A, vll B) {
+    if (A.empty() || B.empty()) return {};
+    ll s = A.size() + B.size() - 1, e = 32 - __builtin_clz(s);
+    ll n = 1 << e, inv_n = binpow(n, MOD - 2);
+    vll L(A), R(B), ret(n);
     L.resize(n); R.resize(n);
     ntt(L); ntt(R);
     for (int i = 0; i < n; i++) {
-        out[-i & (n - 1)] = ((L[i] * R[i]) % MOD * inverse) % MOD;
+        ret[-i & (n - 1)] = ((L[i] * R[i]) % MOD * inv_n) % MOD; 
     }
-    ntt(out);
-    return vll(out.begin(), out.begin() + s);
+    ntt(ret);
+    return {ret.begin(), ret.begin() + s};
 }
 
 vll solve(ll lx, ll rx) {
     if (rx - lx == 1) return {1, lx};
 
     ll m = (lx + rx) / 2;
-    return multiply(solve(lx, m), solve(m, rx));
+    return convolution(solve(lx, m), solve(m, rx));
 }
 
 int main() {
