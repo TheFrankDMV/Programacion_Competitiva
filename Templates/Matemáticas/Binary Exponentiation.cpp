@@ -18,7 +18,7 @@ ll binpow(ll a, ll b) {
         a = (a * a) % MOD;
         b /= 2;
     }
-    return res;
+    return ret;
 }
 ll inv(ll a) {
     return binpow(a, MOD - 2);
