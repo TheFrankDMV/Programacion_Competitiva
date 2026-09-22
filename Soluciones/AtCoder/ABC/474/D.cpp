@@ -1,4 +1,4 @@
-// AtCoder ABC 475 - D "Outweigh"
+// AtCoder ABC 474 - D "Outweigh"
 // https://atcoder.jp/contests/abc474/tasks/abc474_d
 
 #include <bits/stdc++.h>
