@@ -154,7 +154,7 @@ void solve() {
     }
 
     ll ans = INF;
-    for (int i = 0; i < m; i++){
+    for (int i = 0; i < m; i++) {
         if (L[i] != -INF && R[i] != -INF) {
             ans = min(ans, n - (L[i] + R[i] - 1));
         }
