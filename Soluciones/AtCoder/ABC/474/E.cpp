@@ -1,4 +1,4 @@
-// AtCoder ABC 475 - E "One Time Coupon"
+// AtCoder ABC 474 - E "One Time Coupon"
 // https://atcoder.jp/contests/abc474/tasks/abc474_e
 
 #include <bits/stdc++.h>
