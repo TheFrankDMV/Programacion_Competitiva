@@ -20,7 +20,6 @@ ll binpow(ll a, ll b) {
     }
     return res;
 }
-
 ll inv(ll a) {
     return binpow(a, MOD - 2);
 }
