@@ -38,7 +38,7 @@ int main() {
     vll A(n + 1);
     for (int i = 1; i <= n; i++) cin >> A[i];
 
-    vector<Item> C(n + 1, {0,0});
+    vector<Item> C(n + 1, {0, 0});
     ll l = -INF, r = INF;
     for (int i = n; i >= 1; i--) {
         C[i] = {1, -A[i]};
