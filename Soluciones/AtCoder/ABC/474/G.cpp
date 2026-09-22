@@ -1,4 +1,4 @@
-// AtCoder ABC 475 - G "LRUD Moving 2"
+// AtCoder ABC 474 - G "LRUD Moving 2"
 // https://atcoder.jp/contests/abc474/tasks/abc474_g
 
 #include <bits/stdc++.h>
@@ -26,28 +26,28 @@ void solve() {
 
     string ans;
     ll delta = k - min_k;
-    ll B = delta / (n - 1);
+    ll full_blocks = delta / (n - 1);
     ll rem = delta % (n - 1);
-    ll W = (rem > 0 ? rem + 1 : 0);
+    ll partial_width = (rem > 0 ? rem + 1 : 0);
 
-    for (int i = 0; i < B; i++) {
+    for (int i = 0; i < full_blocks; i++) {
         ans += string(n - 1, 'R') + "D" + string(n - 1, 'L') + "D";
     }
 
-    if (W > 0) {
-        ans += string(W - 1, 'R') + "D" + string(W - 1, 'L') + "D";
+    if (partial_width > 0) {
+        ans += string(partial_width - 1, 'R') + "D";
+        ans += string(partial_width - 1, 'L') + "D";
     }
 
     for (int i = 0; i < n; i++) {
-        ll r = (i < W ? 2 * B + 2 : 2 *B);
-        ll steps = (n - 1) - r;
+        ll start_row = (i < partial_width ? 2 * full_blocks + 2 : 2 * full_blocks);
+        ll steps = (n - 1) - start_row;
 
         if (i % 2 == 0) ans += string(steps, 'D');
         else ans += string(steps, 'U');
 
         if (i < n - 1) ans += "R";
     }
-
 
     if (transposed) {
         for (auto &c : ans) {
