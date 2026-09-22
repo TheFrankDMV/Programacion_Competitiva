@@ -28,7 +28,7 @@ void solve() {
         if (cnt[k]) return true;
 
         ll tot = cnt_extra, needed = 1;
-        for (int i = k + 1; i < n + LOG; i ++) {
+        for (int i = k + 1; i < n + LOG; i++) {
             tot += cnt[i];
         }
         for (int i = k - 1; i >= 1; i--) {
