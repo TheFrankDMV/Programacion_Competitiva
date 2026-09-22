@@ -1,4 +1,4 @@
-// AtCoder ABC 475 - B "Exit Order"
+// AtCoder ABC 474 - B "Exit Order"
 // https://atcoder.jp/contests/abc474/tasks/abc474_b
 
 #include <bits/stdc++.h>
