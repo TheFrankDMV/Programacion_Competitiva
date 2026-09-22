@@ -1,4 +1,4 @@
-// AtCoder ABC 475 - C "Remove and Append"
+// AtCoder ABC 474 - C "Remove and Append"
 // https://atcoder.jp/contests/abc474/tasks/abc474_c
 
 #include <bits/stdc++.h>
