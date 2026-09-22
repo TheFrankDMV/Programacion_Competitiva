@@ -1,4 +1,4 @@
-// AtCoder ABC 475 - A "Not X"
+// AtCoder ABC 474 - A "Not X"
 // https://atcoder.jp/contests/abc474/tasks/abc474_a
 
 #include <bits/stdc++.h>
