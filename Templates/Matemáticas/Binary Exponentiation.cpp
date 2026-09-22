@@ -14,7 +14,7 @@ ll binpow(ll a, ll b) {
     ll ret = 1;
     a %= MOD;
     while (b > 0) {
-        if (b & 1) ret = (res * a) % MOD;
+        if (b & 1) ret = (ret * a) % MOD;
         a = (a * a) % MOD;
         b /= 2;
     }
