@@ -67,7 +67,7 @@ int main() {
 
     ll tt;
     cin >> tt;
-    while(tt--) {
+    while (tt--) {
         solve();
     }
 }
