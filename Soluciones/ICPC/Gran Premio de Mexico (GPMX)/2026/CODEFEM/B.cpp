@@ -10,7 +10,7 @@ using vll = vector<ll>;
 using vpll = vector<pll>;
 
 pll get_hour(string s) {
-    return {stoll(s.substr(0,2)), stoll(s.substr(3,2))};
+    return {stoll(s.substr(0, 2)), stoll(s.substr(3, 2))};
 }
 
 int main() {
