@@ -40,8 +40,8 @@ int main() {
     }
 
     ll ans = 0;
-    while(!q.empty()) {
-        auto [x,y] = q.front(); q.pop();
+    while (!q.empty()) {
+        auto [x, y] = q.front(); q.pop();
         ans++;
         if (dis[x][y] == k) continue;
 
