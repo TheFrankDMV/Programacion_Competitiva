@@ -12,7 +12,7 @@ struct LazySegtree {
     ll sz;
     LazySegtree(ll n) {
         sz = 1;
-        while(sz < n) sz *= 2;
+        while (sz < n) sz *= 2;
         tree.assign(2 * sz, 0);
         lazy.assign(2 * sz, 0);
     }
