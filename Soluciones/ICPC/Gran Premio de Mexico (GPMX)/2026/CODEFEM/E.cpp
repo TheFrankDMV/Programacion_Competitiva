@@ -26,7 +26,7 @@ int main() {
         vis[x][y] = f;
     }
 
-    while(!pq.empty()) {
+    while (!pq.empty()) {
         auto [f, x, y] = pq.top(); pq.pop();
         
         if (f == 0 || f < vis[x][y]) continue;
@@ -37,7 +37,7 @@ int main() {
             if (nx < 1 || nx > n || ny < 1 || ny > m) continue;
             if (vis[nx][ny] >= f - 1) continue;
 
-            vis[nx][ny]= f - 1;
+            vis[nx][ny] = f - 1;
             pq.push({f - 1, nx, ny});
         }
     }
@@ -65,7 +65,7 @@ int main() {
     vector<vll> dis(n + 1, vll(m + 1, INF));
     q.push({sx, sy});
     dis[sx][sy] = 0;
-    while(!q.empty()) {
+    while (!q.empty()) {
         auto [x, y] = q.front(); q.pop();
         for (int i = 0; i < 4; i++) {
             ll nx = x + dx[i], ny = y + dy[i];
