@@ -23,7 +23,7 @@ string solve(vector<string> A) {
 
 void remove_leading_zeros(string &s) {
     reverse(s.begin(), s.end());
-    while(ll(s.size()) > 1 && s.back() == '0') s.pop_back();
+    while (ll(s.size()) > 1 && s.back() == '0') s.pop_back();
     reverse(s.begin(), s.end());
 }
 
