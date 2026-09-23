@@ -31,7 +31,7 @@ struct MaxFlow {
             ll u = q.front(); q.pop();
             for (auto v : g[u]) {
                 if (cap[u][v] > 0 && from[v] == -1) {
-                    from[v]= u;
+                    from[v] = u;
                     q.push(v);
                     if (v == t) return true;
                 }
