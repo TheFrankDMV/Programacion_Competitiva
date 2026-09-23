@@ -25,8 +25,8 @@ struct SuffixArray {
             fill(ws.begin(), ws.end(), 0);
             for (int i = 0; i < n; i++) ws[x[i]]++;
             for (int i = 1; i < lim; i++) ws[i] += ws[i - 1];
-            for (int i = n; i--;) sa[--ws[x[y[i]]]] = y[i];
-            swap(x,y);
+            for (int i = n; i--; ) sa[--ws[x[y[i]]]] = y[i];
+            swap(x, y);
             p = 1; x[sa[0]] = 0;
             for (int i = 1; i < n; i++) {
                 a = sa[i - 1];
