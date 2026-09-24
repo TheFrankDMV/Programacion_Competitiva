@@ -11,7 +11,7 @@
  - Tiempo: O(MAX_N) para setup(), O(1) para binom(a, b).
 */
 
-const ll MAX_N = 200005;
+const ll MAX_N = 2e5 + 5;
 
 vll fact(MAX_N), inv_fact(MAX_N);
 
