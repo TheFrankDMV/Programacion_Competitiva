@@ -34,7 +34,7 @@ int main() {
                 dp[life][i][j + 1] += (diff / tot) * dp[life][i][j];
 
                 if (tot > diff) {
-                    ld prob = (tot - diff) /  (tot * (tot - 1));
+                    ld prob = (tot - diff) / (tot * (tot - 1));
                     dp[life][i + 1][j + 1] += prob * dp[life][i][j];
                 }
 
